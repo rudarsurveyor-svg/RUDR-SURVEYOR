@@ -1,0 +1,28 @@
+workflows:
+  android-release:
+    name: RUDR SURVEYOR Android Release
+    environment:
+      flutter: stable
+    scripts:
+      - name: Get packages
+        script: flutter pub get
+      - name: Generate app icons and splash
+        script: |
+          dart run flutter_launcher_icons
+          dart run flutter_native_splash:create
+      - name: Build APK
+        script: flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+
+  android-debug:
+    name: RUDR SURVEYOR Android Debug
+    environment:
+      flutter: stable
+    scripts:
+      - name: Get packages
+        script: flutter pub get
+      - name: Build debug APK
+        script: flutter build apk --debug
+    artifacts:
+      - build/app/outputs/flutter-apk/app-debug.apk
