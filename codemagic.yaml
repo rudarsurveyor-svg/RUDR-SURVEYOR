@@ -4,6 +4,9 @@ workflows:
     environment:
       flutter: stable
     scripts:
+      - name: Generate Android project
+        script: |
+          flutter create --platforms=android .
       - name: Get packages
         script: flutter pub get
       - name: Generate app icons and splash
@@ -20,6 +23,9 @@ workflows:
     environment:
       flutter: stable
     scripts:
+      - name: Generate Android project
+        script: |
+          flutter create --platforms=android .
       - name: Get packages
         script: flutter pub get
       - name: Build debug APK
