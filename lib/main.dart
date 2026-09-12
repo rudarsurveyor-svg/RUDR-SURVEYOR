@@ -53,4 +53,21 @@ class _RudrSurveyorAppState extends State<RudrSurveyorApp> {
       ),
 
       routes: {
-        '/
+        '/measurement': (_) =>
+            LandMeasurementScreen(isGujarati: gu),
+
+        '/area': (_) =>
+            AreaCalculatorScreen(isGujarati: gu),
+
+        '/units': (_) =>
+            UnitConverterScreen(isGujarati: gu),
+
+        '/knowledge': (_) =>
+            KnowledgeScreen(isGujarati: gu),
+
+        '/report': (_) =>
+            SurveyReportScreen(isGujarati: gu),
+      },
+    );
+  }
+}
